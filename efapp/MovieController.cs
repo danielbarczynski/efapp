@@ -32,5 +32,19 @@ namespace efapp
             _db.Movies.Update(new Movie { Id = id, Name = name, Price = price});
             _db.SaveChanges();
         }
+
+        public void Search(string name)
+        {
+            IQueryable<Movie> query = _db.Movies.Where(x => x.Name.Contains(name));
+
+            query.ToList();
+
+            Console.WriteLine($"\nQuery: {name}\n");
+            foreach (var item in query)
+            {
+                Console.WriteLine(item.Id + " " + item.Name + " " + item.Price + "pln");
+            }
+            
+        }
     }
 }

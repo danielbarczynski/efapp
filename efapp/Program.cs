@@ -15,14 +15,16 @@ namespace efapp
             //controller.Add(movie1);
             //controller.Add(movie2);
 
-            controller.Update(1, "hp", 10);
+            //controller.Update(1, "hp", 10);
 
             var movies = context.Movies.ToList();
 
             foreach (var item in movies)
             {
-                Console.WriteLine(item.Id + " " + item.Name + " " + item.Price);
+                Console.WriteLine(item.Id + " " + item.Name + " " + item.Price + "pln");
             }
+
+            controller.Search("l");
         }
     }
 }
