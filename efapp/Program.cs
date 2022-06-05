@@ -25,6 +25,8 @@ namespace efapp
             }
 
             controller.Search("l");
+            controller.Find(10);
+            controller.Find2(11);
         }
     }
 }

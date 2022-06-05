@@ -39,12 +39,26 @@ namespace efapp
 
             query.ToList();
 
-            Console.WriteLine($"\nQuery: {name}\n");
+            Console.WriteLine($"\nQuery: {name}");
             foreach (var item in query)
             {
                 Console.WriteLine(item.Id + " " + item.Name + " " + item.Price + "pln");
             }
             
+        }
+
+        public void Find(int id)
+        {
+            var query = _db.Movies.FirstOrDefault(x => x.Id == id);
+            Console.WriteLine($"\nFind: {id}");
+            Console.WriteLine(query.Id + " " + query.Name + " " + query.Price + "pln");
+        }
+        
+        public void Find2(int id)
+        {
+            var query = _db.Movies.Find(id);
+            Console.WriteLine($"\nFind2: {id}");
+            Console.WriteLine(query.Id + " " + query.Name + " " + query.Price + "pln");
         }
     }
 }
