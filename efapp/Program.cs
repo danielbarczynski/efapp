@@ -24,7 +24,7 @@ namespace efapp
                 Console.WriteLine(item.Id + " " + item.Name + " " + item.Price + "pln");
             }
 
-            controller.Search("l");
+            controller.Search("t");
             controller.Find(10);
             controller.Find2(11);
         }

@@ -37,10 +37,10 @@ namespace efapp
         {
             IQueryable<Movie> query = _db.Movies.Where(x => x.Name.Contains(name));
 
-            query.ToList();
+            var query2 = query.ToList().OrderByDescending(x => x.Id);
 
             Console.WriteLine($"\nQuery: {name}");
-            foreach (var item in query)
+            foreach (var item in query2)
             {
                 Console.WriteLine(item.Id + " " + item.Name + " " + item.Price + "pln");
             }
